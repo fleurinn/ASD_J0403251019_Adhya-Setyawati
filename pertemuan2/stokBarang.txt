@@ -1,0 +1,11 @@
+MBG001,Roti,50
+MBG002,AirMineral,15
+MBG003,RotiGandum,30
+MBG004,Sosis,35
+MBG005,MieGoreng,20
+MBG006,MieKuah,25
+MBG007,Permen,10
+MBG008,TehBotol,25
+MBG009,Kornet,10
+MBG010,Biskuit,47
+MBG011,Vanila,11
