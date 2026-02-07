@@ -73,13 +73,13 @@ def tampilkan_data(stok_dict):
         untuk tampilan yang rapi, atur f-string formatting :
             {'Kode' : <15} artinya : tampilkan kode <= rata kiri dengan lebar 15 karakter
             {'Nama' : <20} artinya : tampilkan nama rata kiri, dengan lebar kolom 20 karakter
-            {'Stok' : >5} artinya : tampilkan stok rata kiri, dengan lebar kolom 5 karakter
+            {'Stok' : >10} artinya : tampilkan stok rata kiri, dengan lebar kolom 10 karakter
     '''
     # membuat Header Tabel
     print("=== Daftar Stok Barang ===")
     # membuat header tabel
-    print(f"{'Kode':<15}|{'Nama':<20}| {'Stok':>3}")
-    print("-" * 38)
+    print(f"{'Kode':<15}|{'Nama':<20}| {'Stok':>5}")
+    print("-" * 45)
 
     for kode in sorted(stok_dict.keys()):
         nama=stok_dict[kode]["nama"]
@@ -87,11 +87,11 @@ def tampilkan_data(stok_dict):
 
         # jika stok 0, ganti dengan pesan
         if stok == 0:
-            stok_tampil = "Stok Kosong!"
+            stok_tampil = "Kosong"
         else:
             stok_tampil = stok
         
-        print(f"{kode:<15}| {nama:<20}| {stok_tampil:>3}")
+        print(f"{kode:<15}| {nama:<20}| {stok_tampil:>5}")
 
 # ------------------------------------
 # Fungsi: Cari barang berdasarkan kode

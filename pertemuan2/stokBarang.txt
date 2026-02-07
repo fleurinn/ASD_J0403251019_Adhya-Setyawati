@@ -9,3 +9,4 @@ MBG008,TehBotol,25
 MBG009,Kornet,10
 MBG010,Biskuit,47
 MBG011,Vanila,11
+MBG012,yupi,0
