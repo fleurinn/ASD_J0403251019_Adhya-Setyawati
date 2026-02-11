@@ -1,9 +1,18 @@
+# ==========================================================
+# TUGAS HANDS-ON MODUL 1
+# Studi Kasus: NIM	berakhiran	angka	ganjil	mengerjakan Latihan	1,3,5
+#
+# Nama :Adhya Setyawati
+# NIM :J0403251019
+# Kelas :TPL B / P1
+# ==========================================================
+
+# --- jawaban : ---
+
 # =============================================================================
 # Pertemuan 3: Linked List
 # Latihan 1: Implementasikan fungsi untuk menghapus node dengan nilai tertentu.
 # =============================================================================
-# Implementasi fungsi untuk menghapus node dengan nilai tertentu. 
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -16,23 +25,19 @@ class LinkedList:
     def delete_node(self, key):
         temp = self.head
     
-    #Jika head adalah node yang ingin dihapus
         if temp and temp.data == key:
-            self.head = temp.next   #Head pindah ke elemen kedua
-            temp= None              #Menghapus referensi lama
+            self.head = temp.next
+            temp= None           
             return
     
-    #Cari node yang mau dihapus dan simpan node sebelumnya
         prev = None
         while temp and temp.data != key :
-            prev = temp      #Simpan node sekarang sebagai "sebelumnya"
-            temp = temp.next  #Maju ke node berikutnya
+            prev = temp
+            temp = temp.next 
     
-    #Jika data tidak ditemukan sampai akhir list
         if temp is None:
-            return    #fungsi langsung berhenti 
+            return
     
-    #Lepaskan node dari list dengan menghubungkan prev ke temp.next
         prev.next = temp.next
         temp = None
 
@@ -49,7 +54,7 @@ class Node:
 class DoublyLinkedList:
     def __init__(self):
         self.head = None
-        self.tail = None #simpan node terakhir untuk traversing mundur
+        self.tail = None
     def insert_at_end(self, data):
         new_node = Node(data)
         if not self.head:
@@ -75,9 +80,9 @@ class DoublyLinkedList:
         return False
     
 # Contoh Tampilan 1 :
-# Masukkan	elemen	ke	dalam	Doubly	Linked	List:	2,	6,	9,	14,	20
-# Masukkan	elemen	yang	ingin	dicari:	9
-# Elemen	9	ditemukan	dalam	Doubly	Linked	List.
+# Masukkan elemen ke dalam Doubly Linked List: 2, 6, 9, 14, 20
+# Masukkan elemen yang ingin dicari: 9
+# Elemen 9 ditemukan dalam Doubly Linked List.
 dll = DoublyLinkedList()
 for x in [2, 6, 9, 14, 20]:
     dll.insert_at_end(x)
@@ -86,7 +91,62 @@ dll.search(9)
 
 # ===============================================================
 # Pertemuan 3 : Linked List (Tugas 5)
-# Implementasikan Pencarian pada node tertentu Double Linked List
+# Tambahkan metode untuk membalik (reverse) sebuah single linked list tanpa membuat linked list baru
 # ===============================================================
+class Node:  
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
+    # Menambahkan elemen ke akhir linked list (perbaiki loop traversal)
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next is not None:  
+            temp = temp.next
+        temp.next = new_node
+
+    # Menampilkan linked list
+    def display(self):  
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("null")
+
+    # Membalik (reverse) linked list tanpa membuat linked list baru
+    def reverse(self):
+        prev = None  
+        current = self.head
+        while current is not None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        self.head = prev
+
+    # Membuat linked list dari input string
+    def create_from_input(self, input_str):
+        elements = input_str.split(", ")
+        for elem in elements:  
+            self.insert_at_end(int(elem.strip()))  
+
+def main():  
+    linked_list = LinkedList()
+    input_str = input("Masukkan elemen untuk Linked List: ")  
+    linked_list.create_from_input(input_str)
+    print("Linked List sebelum dibalik: ", end="")
+    linked_list.display() 
+    linked_list.reverse()
+    print("Linked List setelah dibalik: ", end="")
+    linked_list.display()
+
+if __name__ == "__main__":  
+    main()
