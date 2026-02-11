@@ -37,7 +37,7 @@ def baca_stok(nama_file):   # fungsi untuk membaca data stok dari file
             except ValueError: # jika gagal mengubah
                 continue # jika gagal, lewati baris
 
-            # simpan data barang ke directory dengan key, value
+            # simpan data barang ke directory dengan key & value
             stok_dict[kode]={
                 "nama": nama,   # menyimpan nama barang
                 "stok": int(stok_int)   # menyimpan stok barang
