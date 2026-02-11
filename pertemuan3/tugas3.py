@@ -22,7 +22,7 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
-    # fungsi untuk menambah node di akhir 
+    #Fungsi untuk menambah node di akhir 
     def append(self, data):
         new_node = Node(data)
         
@@ -35,15 +35,15 @@ class LinkedList:
             temp = temp.next
         temp.next = new_node
         
-    # menghapus node sesuai nilai
-    def delete_node(self, key):
+    #Menghapus node sesuai nilai
+    def delete_node (self,key):
         temp = self.head
         
-        # jika node yang ingin dihapus adalah head
+        #jika node yang ingin dihapus adalah head
         if temp and temp.data == key:
             self.head = temp.next
             temp = None
-            print("Data berhasil dihapus!")
+            print("zdata berhasil dihapus!")
             return
         
         prev = None
@@ -51,40 +51,48 @@ class LinkedList:
             prev = temp
             temp = temp.next
         
-        # jika data tidak ditemukan
+        #jika data tidak ditemukan
         if temp is None:
-            print("Data tidak ditemukan!")
+            print (f'Data tidak ditemukan!')
             return
         
         prev.next = temp.next
         temp = None
         print("Data berhasil dihapus!")
         
-    # menampilkan isi linked list
+        #menampilkan isi linked list
     def display(self):
         temp = self.head
         if temp is None:
             print("Linked list kosong.")
             return
-        
+            
         while temp:
-            print(temp.data, end="->")
+            print(temp.data, end=" -> ")
             temp = temp.next
         print("None")
             
-# program utama
+#=========================================
+# Program Utama
+#=========================================
 
 ll = LinkedList()
 
-# input jumlah data
-n = int(input("Masukkan jumlah data : ")) 
+#Input jumlah data
+print("--- Implementasi fungsi menghapus node --- ")
+n = int(input("Masukkan jumlah data : "))
+
 for i in range(n):
     data = int(input(f"Masukkan data ke-{i+1} : "))
     ll.append(data)
+    
 print("\nIsi Linked List : ")
-ll.display() 
+ll.display()
+
+#Input nilai yang ingin dihapus 
 hapus = int(input("\nMasukkan nilai yang ingin dihapus : "))
 ll.delete_node(hapus)
+
 print("\nLinked list setelah dihapus")
 ll.display()
 # ===============================================================
@@ -128,6 +136,7 @@ class DoublyLinkedList:
 # --- output ---
 dll = DoublyLinkedList()
 
+print("\n--- Implementasi fungsi mencari node ---")
 input_data = input("Masukkan elemen ke dalam Doubly Linked List (pisahkan dengan koma): ")
 elements = input_data.split(",")
 
@@ -185,11 +194,12 @@ class LinkedList:
 
     # Membuat linked list dari input string
     def create_from_input(self, input_str):
-        elements = input_str.split(", ")
+        elements = input_str.split(",")
         for elem in elements:  
             self.insert_at_end(int(elem.strip()))  
 
 def main():  
+    print("\n--- Implementasi fungsi pembalikan node --- ")
     linked_list = LinkedList()
     input_str = input("Masukkan elemen untuk Linked List: ")  
     linked_list.create_from_input(input_str)
