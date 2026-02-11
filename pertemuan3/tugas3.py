@@ -1,5 +1,5 @@
 # ==========================================================
-# TUGAS HANDS-ON MODUL 1
+# TUGAS PERTEMUAN 3
 # Studi Kasus: NIM	berakhiran	angka	ganjil	mengerjakan Latihan	1,3,5
 #
 # Nama :Adhya Setyawati
@@ -22,28 +22,74 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
+    # fungsi untuk menambah node di akhir 
+    def append(self, data):
+        new_node = Node(data)
+        
+        if not self.head:
+            self.head = new_node
+            return
+        
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+        
+    # menghapus node sesuai nilai
     def delete_node(self, key):
         temp = self.head
-    
+        
+        # jika node yang ingin dihapus adalah head
         if temp and temp.data == key:
             self.head = temp.next
-            temp= None           
+            temp = None
+            print("Data berhasil dihapus!")
             return
-    
+        
         prev = None
-        while temp and temp.data != key :
+        while temp and temp.data != key:
             prev = temp
-            temp = temp.next 
-    
+            temp = temp.next
+        
+        # jika data tidak ditemukan
         if temp is None:
+            print("Data tidak ditemukan!")
             return
-    
+        
         prev.next = temp.next
         temp = None
+        print("Data berhasil dihapus!")
+        
+    # menampilkan isi linked list
+    def display(self):
+        temp = self.head
+        if temp is None:
+            print("Linked list kosong.")
+            return
+        
+        while temp:
+            print(temp.data, end="->")
+            temp = temp.next
+        print("None")
+            
+# program utama
 
+ll = LinkedList()
+
+# input jumlah data
+n = int(input("Masukkan jumlah data : ")) 
+for i in range(n):
+    data = int(input(f"Masukkan data ke-{i+1} : "))
+    ll.append(data)
+print("\nIsi Linked List : ")
+ll.display() 
+hapus = int(input("\nMasukkan nilai yang ingin dihapus : "))
+ll.delete_node(hapus)
+print("\nLinked list setelah dihapus")
+ll.display()
 # ===============================================================
 # Pertemuan 3 : Linked List (Tugas 3)
-# Implementasikan Pencarian pada node tertentu Double Linked List
+# Latihan 3: Implementasikan Pencarian pada node tertentu Double Linked List
 # ===============================================================
 class Node:
     def __init__(self, data):
@@ -79,19 +125,24 @@ class DoublyLinkedList:
         print(f"Elemen {key} tidak ditemukan dalam Doubly Linked List.")
         return False
     
-# Contoh Tampilan 1 :
-# Masukkan elemen ke dalam Doubly Linked List: 2, 6, 9, 14, 20
-# Masukkan elemen yang ingin dicari: 9
-# Elemen 9 ditemukan dalam Doubly Linked List.
+# --- output ---
 dll = DoublyLinkedList()
-for x in [2, 6, 9, 14, 20]:
-    dll.insert_at_end(x)
 
-dll.search(9)
+input_data = input("Masukkan elemen ke dalam Doubly Linked List (pisahkan dengan koma): ")
+elements = input_data.split(",")
+
+for elem in elements:
+    elem = elem.strip()
+    if elem != "":
+        dll.insert_at_end(int(elem))
+
+key = int(input("Masukkan elemen yang ingin dicari: "))
+dll.search(key)
+
 
 # ===============================================================
 # Pertemuan 3 : Linked List (Tugas 5)
-# Tambahkan metode untuk membalik (reverse) sebuah single linked list tanpa membuat linked list baru
+# Latihan 5: Tambahkan metode untuk membalik (reverse) sebuah single linked list tanpa membuat linked list baru
 # ===============================================================
 class Node:  
     def __init__(self, data):
