@@ -1,3 +1,12 @@
+# ==========================================================
+# Nama      :Adhya Setyawati
+# NIM       :J0403251019
+# Kelas     :TPL B / P1
+# ==========================================================
+
+# ==========================================================
+# Implementasi Dasar : Queue
+# ==========================================================
 class Node:
     def __init__(self, data): # konstruktor 
         self.data = data # tujuan: menyimpan nilai atau data
