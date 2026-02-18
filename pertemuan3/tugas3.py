@@ -211,3 +211,8 @@ def main():
 
 if __name__ == "__main__":  
     main()
+
+# node tempat penyimpan data
+# pointer penunjuk
+# stack ditumpuk, last in first out
+# queue = antrian, first in first out (antrian)
