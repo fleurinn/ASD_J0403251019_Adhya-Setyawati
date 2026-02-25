@@ -18,3 +18,4 @@ def jumlah_list(data,index=0):
 
 print("--- Program Jumlah Data List ---")
 print(jumlah_list([2,4,5]))
+
