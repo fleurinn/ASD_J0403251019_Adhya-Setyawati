@@ -5,22 +5,15 @@
 # ==========================================================
 
 # ==========================================================
-# Materi Rekursif : Call Stack
-# Tracing bilangan (masuk-keluar)
-# input 3
-# masuk 3-2-1
-# keluar 1-2-3 
+# Contoh Backtracking 1: Kombinasi Biner (n)
 # ==========================================================
-
-def hitung(n):
-    # base case 
-    if n == 0:
-        print("Selesai.")
+def biner(n, hasil=""):
+ # Base case: jika panjang string sudah n, cetak hasil
+    if len(hasil) == n:
+        print(hasil)
         return
-    
-    print("Masuk: ", n)
-    hitung(n-1) # recursive case
-    print("Keluar.", n)
-
-print ("=== Program Tracing ===")
-hitung (100)
+    # Choose + Explore: tambah '0'
+    biner(n, hasil + "0")
+    # Choose + Explore: tambah '1'
+    biner(n, hasil + "1")
+biner(3)
