@@ -8,7 +8,7 @@
 # Contoh Backtracking 1: Kombinasi Biner (n)
 # ==========================================================
 def biner(n, hasil=""):
- # Base case: jika panjang string sudah n, cetak hasil
+    # Base case: jika panjang string sudah n, cetak hasil
     if len(hasil) == n:
         print(hasil)
         return
