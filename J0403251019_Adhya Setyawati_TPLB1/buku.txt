@@ -1,0 +1,5 @@
+BKN001, Bumi, 90000
+BKN002, Bulan, 100000
+BKN003, Ada Apa dengan Cinta, 88000
+BKN004, Biru Laut, 90000
+BKN005, IPA, 50000
