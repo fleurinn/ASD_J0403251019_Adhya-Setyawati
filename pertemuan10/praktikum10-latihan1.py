@@ -92,4 +92,4 @@ PENJELASAN LATIHAN 3
 kode ini digunakan untuk mencari suatu nilai dalam bst secara efisien. pencarian dilakukan 
 dengan membandingkan nilai target dengan root, lalu bergerak ke kiri atau kanan sampai data 
 ditemukan atau tidak ada.
-'''
+''' 
