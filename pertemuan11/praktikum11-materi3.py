@@ -6,7 +6,7 @@
 
 #--------------------------------------------------
 # pertemuan 11
-# Materi 2: Implementasi DFS (LIFO : STACK)
+# Materi 3: Implementasi DFS (LIFO : STACK)
 #--------------------------------------------------
 
 
